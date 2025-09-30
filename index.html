@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SURAT HATI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --accent: #ff4d6d;
+      --glass: rgba(255,255,255,0.04);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%;}
+    body{
+      font-family: 'Montserrat', system-ui, sans-serif;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(255,77,109,0.06), transparent),
+                  radial-gradient(900px 500px at 95% 90%, rgba(255,77,109,0.03), transparent),
+                  #000000;
+      color:#fff;
+      overflow-y:auto;
+    }
+
+    .wrap{
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      padding:24px;
+      gap:24px;
+    }
+
+    .photo-card{
+      position:relative;
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    }
+    .photo-card img{width:100%;height:auto;display:block;object-fit:cover}
+    .photo-overlay{
+      position:absolute;inset:0;display:flex;align-items:flex-end;padding:28px;
+      background:linear-gradient(180deg,rgba(0,0,0,0.18),rgba(0,0,0,0.42));
+    }
+    .quote{font-family:'Great Vibes',cursive;font-size:48px;color:var(--accent)}
+
+    .panel{display:flex;flex-direction:column;gap:18px}
+    .card{background:rgba(255,255,255,0.03);border-radius:16px;padding:18px;box-shadow:0 8px 30px rgba(0,0,0,0.6)}
+
+    .playlist{display:flex;flex-direction:column;gap:12px;max-height:300px;overflow-y:auto}
+    .track{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,0.04);padding:10px;border-radius:12px}
+    .track img{width:60px;height:60px;border-radius:12px;object-fit:cover}
+    .track-info{flex:1}
+    .track-info .name{font-weight:600}
+    .track-info .artist{font-size:13px;color:#bbb}
+
+    .controls{display:flex;gap:12px;align-items:center;margin-top:12px}
+    .btn{border:none;padding:10px 16px;border-radius:12px;background:var(--glass);color:#fff;cursor:pointer}
+    .btn.play{background:linear-gradient(90deg,var(--accent),#ff8aa0);color:#111}
+
+    .progress{height:8px;background:rgba(255,255,255,0.1);border-radius:8px;flex:1;overflow:hidden}
+    .progress>i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),#ff8aa0)}
+
+    @media(max-width:768px){
+      .quote{font-size:32px}
+      .playlist{max-height:200px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="photo-card">
+      <img src="https://files.catbox.moe/2xnh92.jpg" alt="Foto Spesial">
+      <div class="photo-overlay">
+        <div class="quote">Semoga Suka</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="card">
+        <h1>SURAT HATI</h1>
+        <p style="color:#ccc;font-size:14px">Dari myrev untukmu — <span id="date"></span></p>
+      </div>
+
+      <div class="card">
+        <h2>Playlist Spesial</h2>
+        <div class="playlist" id="playlist">
+          <!-- contoh track -->
+          <div class="track" data-src="https://files.catbox.moe/so0qav.mp3">
+            <img src="https://files.catbox.moe/kicgob.jpg" alt="thumb">
+            <div class="track-info">
+              <div class="name">ILOVE YOU SO</div>
+              <div class="artist">The walters</div>
+            </div>
+          </div>
+          <div class="track" data-src="https://files.catbox.moe/r99gev.mp3">
+            <img src="https://files.catbox.moe/5v8n1c.jpg" alt="thumb">
+            <div class="track-info">
+              <div class="name">SEMPURNA</div>
+              <div class="artist">Andra and The backbone</div>
+            </div>
+          </div>
+        </div>
+        <div class="controls">
+          <button class="btn play" id="playBtn">▶ Putar</button>
+          <button class="btn" id="pauseBtn">⏸ Jeda</button>
+          <div class="progress"><i id="progBar"></i></div>
+        </div>
+      </div>
+
+      <div class="card" style="text-align:center">
+        <p>haii ayraa cantikk 🤍, makasih ya udah bikin aku ngerasa beruntung banget punya kamu. serius deh, aku nggak ada niat buat mainin hati kamu—aku cuma mau mainin rambut kamu doang wkwk 😏✌️.
+aku ngerti kok kamu takut disakitin, tapi tenang, aku di sini bukan buat nyakitin… aku di sini buat bikin kamu ketawa tiap hari sampe pipi pegel 😅.
+kamu tuh berharga banget buat aku, jadi jangan mikir kamu kayak boneka lagi ya, soalnya aku maunya kita main peran jadi pasangan paling gokil + paling romantis se-dunia 🤭💕.
+intinya, aku sayang banget sama kamu, ayraa. janji aku bakal jaga hati kamu sekuat aku jaga password wifi rumah 🫶✨.aku serius makasih banget udah ada di hidupku. kamu tuh spesial banget buat aku, beneran bukan main-main. aku ngerti kadang aku keliatan sibuk, suka kehabisan bahan obrolan, atau malah ketiduran abis nonton film kebanyakan 😅. tapi please jangan ovt yaa… itu bukan berarti aku bosen atau ngabaikan kamu, apalagi mau ninggalin.
+jujur aja, aku emang nggak selalu jago nyari topik, tapi aku selalu mikirin kamu. aku lebih milih diem bareng kamu daripada rame sama orang lain. walau aku sibuk, kamu tetep jadi orang pertama yang aku pengen kabarin.
+kamu itu bukan cuma hiburan buat aku, tapi rumah. jadi jangan takut yaa, aku nggak akan mainin perasaan kamu. malah aku pengen bikin kamu ngerasa aman sama aku, dan ketawa tiap hari kayak nonton film komedi romantis bareng 😏💕.
+janji, aku bakal terus jaga kamu, meskipun aku rada payah kadang. lopeuu ayraa 💌✨</p>
+      </div>
+    </div>
+  </div>
+
+  <audio id="audio" playsinline></audio>
+
+  <script>
+    document.getElementById('date').textContent = new Date().toLocaleDateString('id-ID',{year:'numeric',month:'long',day:'numeric'});
+
+    const audio = document.getElementById('audio');
+    const playBtn = document.getElementById('playBtn');
+    const pauseBtn = document.getElementById('pauseBtn');
+    const progBar = document.getElementById('progBar');
+    const tracks = document.querySelectorAll('.track');
+    let current = 0;
+
+    function loadTrack(i){
+      const src = tracks[i].getAttribute('data-src');
+      audio.src = src;
+      audio.play();
+    }
+
+    playBtn.onclick=()=>{audio.play()};
+    pauseBtn.onclick=()=>{audio.pause()};
+    audio.ontimeupdate=()=>{progBar.style.width=(audio.currentTime/(audio.duration||1))*100+'%'};
+    audio.onended=()=>{current=(current+1)%tracks.length;loadTrack(current)};
+
+    tracks.forEach((t,i)=>{
+      t.onclick=()=>{current=i;loadTrack(i)}
+    });
+
+    // coba autoplay track pertama
+    window.addEventListener('load',()=>{loadTrack(0)});
+  </script>
+</body>
+</html>
